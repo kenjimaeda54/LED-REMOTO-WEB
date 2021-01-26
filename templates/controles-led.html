@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale 1.0"">
+  <title> Controle de LED</title>   
+<style>
+
+.painel{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-image:url(../static/img/montanha.jpeg);
+  width:419px;
+  height: 316px;
+  background-position: center;                       
+}
+img{
+   width:45px;
+   height: 45px;
+}
+h1{
+    font-family:Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color:black;
+}
+h2{
+    position:absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color:black;
+    text-shadow: 0px 4px 4px rgba(118, 108,1108,0.12);
+    margin-top: 105px;
+}
+.ligado{
+    position:absolute;
+    margin-top:57px;
+    margin-left:-130px;
+}
+.desligado{
+    position:absolute;
+    margin-top:77px;
+    margin-left:-30px;
+}
+</style>
+</head>
+ <body>
+ <div class="painel">
+   <h1>Controle de led</h1>
+   <h2>Led esta {%if LED %}
+   ligado</h2>
+  <div > 
+   <a  class="desligado"
+    onclick="window.location.href='/LED/0';"><img src="/static/img/off-removebg-preview.png">
+  </a>
+   {%else%}
+   desligado
+   <a class="ligado"
+   onclick="window.location.href='/LED/1';"><img src="/static/img/on.png">
+   </a>
+   {%endif%}
+</div>
+ </div> 
+ </body>
+</html>
